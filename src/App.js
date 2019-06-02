@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import TodoInput from './component/todoInput'
+import TodoList from './component/todoList'
+import './App.css'
 
-function App() {
+
+class App extends React.Component {
+  constructor() {
+    super()
+    this.newTodo = this.newTodo.bind(this)
+    this.state = {todos: []}
+  }
+
+  newTodo(newTodoValue) {
+    const currentTodos = this.state.todos
+    this.setState({todos: [...currentTodos, {name: newTodoValue, complete: false}]})
+  }
+
+  render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          
-        </a>
-      </header>
+      <TodoInput newTodo={this.newTodo}/>
+      <TodoList todos={this.state.todos}/>
     </div>
   );
 }
-
+}
 export default App;
