@@ -1,0 +1,7 @@
+.header {
+  background-image: url(../images/bg.png);
+  background-position: center;
+  width: 500px;
+  height: 250px;
+  text-align: center;
+}

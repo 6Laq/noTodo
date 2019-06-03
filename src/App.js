@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoInput from './component/todoInput'
 import TodoList from './component/todoList'
+import TodoHeader from './component/todoHeader'
 import './App.css'
 
 
@@ -19,8 +20,9 @@ class App extends React.Component {
   render(){
   return (
     <div className="App">
-      <TodoInput newTodo={this.newTodo}/>
+      <TodoHeader />
       <TodoList todos={this.state.todos}/>
+      <TodoInput newTodo={this.newTodo}/>
     </div>
   );
 }

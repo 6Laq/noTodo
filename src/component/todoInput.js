@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import "./styles/todoInput.css"
 
 
 
@@ -13,9 +14,13 @@ export default class TodoInput extends React.Component{
     this.state = {newTodoValue: ''}
   }
 
+
   onSubmit(e){
     e.preventDefault()
     this.props.newTodo(this.state.newTodoValue)
+    this.setState({
+      newTodoValue: ''
+    })
   }
 
   onChange(e) {
@@ -25,9 +30,16 @@ export default class TodoInput extends React.Component{
 
   render(){
     return(
-      <form onSubmit={this.onSubmit}>
-        <input value={this.state.newTodoValue} onChange={this.onChange}/>
-      </form>
+      <div className="Form">
+        <form onSubmit={this.onSubmit}>
+          <input 
+            value={this.state.newTodoValue} 
+            onChange={this.onChange}
+            placeholder="Add To List"
+          />
+        </form>
+      </div>
+      
     )
   }
 }
