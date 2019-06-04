@@ -31,6 +31,7 @@ export default class TodoInput extends React.Component{
   render(){
     return(
       <div className="Form">
+        <button />
         <form onSubmit={this.onSubmit}>
           <input 
             value={this.state.newTodoValue} 

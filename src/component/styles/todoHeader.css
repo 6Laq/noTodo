@@ -5,3 +5,9 @@
   height: 250px;
   text-align: center;
 }
+
+h2 {
+  height: 100px;
+  width: 100px;
+  margin: 0;
+}

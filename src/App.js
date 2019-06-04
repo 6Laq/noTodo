@@ -21,10 +21,12 @@ class App extends React.Component {
   return (
     <div className="App">
       <TodoHeader />
+      <br />
       <TodoList todos={this.state.todos}/>
       <TodoInput newTodo={this.newTodo}/>
     </div>
   );
 }
 }
+
 export default App;
